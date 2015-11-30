@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public class Snake : MonoBehaviour
+public class Snake : MonoBehaviour 
 {
     // Current Movement Direction
     // (by default it moves to the right)
@@ -13,6 +13,7 @@ public class Snake : MonoBehaviour
     // Keep Track of Tail
     List<Transform> tail = new List<Transform>();
     // Tail Prefab
+
     public GameObject tailPrefab;
     // Use this for initialization
     void Start()
@@ -26,19 +27,27 @@ public class Snake : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            dir = Vector2.right;
+			if (dir != -Vector2.right) {
+				dir = Vector2.right;	
+			}
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            dir = -Vector2.up;
+			if (dir != Vector2.up) {
+				dir = -Vector2.up;	
+			}
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            dir = -Vector2.right;
+			if (dir != Vector2.right) {
+				dir = -Vector2.right;	
+			}
         }
         else if (Input.GetKey(KeyCode.UpArrow))
         {
-            dir = Vector2.up;
+			if (dir != -Vector2.up) {
+				dir = Vector2.up;	
+			}
         }
     }
 
@@ -81,8 +90,16 @@ public class Snake : MonoBehaviour
             // Get longer in next Move call
             ate = true;
 
+
             // Remove the Food
             Destroy(coll.gameObject, 0.2f);
+			//SpawnFood food;
+
+
+			//add new food
+			//SpawnFood food = gameObject.AddComponent<SpawnFood>();
+			//food.Spawn();
+			
         }
         // Collided with Tail or Border
         else
