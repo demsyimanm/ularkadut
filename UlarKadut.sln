@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{7ABD77EF-BCFC-C617-C0F6-7817A5AB3701}") = "UlarKadut", "Assembly-CSharp.csproj", "{7779A241-E996-E888-463C-04E1D32E2E42}"
+Project("{73609D39-3FEA-BA42-A213-7CC11625CC13}") = "ularkadut", "Assembly-CSharp.csproj", "{77FC3D0B-614C-B588-78EA-81CF08AC059D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7779A241-E996-E888-463C-04E1D32E2E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7779A241-E996-E888-463C-04E1D32E2E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7779A241-E996-E888-463C-04E1D32E2E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7779A241-E996-E888-463C-04E1D32E2E42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77FC3D0B-614C-B588-78EA-81CF08AC059D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77FC3D0B-614C-B588-78EA-81CF08AC059D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77FC3D0B-614C-B588-78EA-81CF08AC059D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77FC3D0B-614C-B588-78EA-81CF08AC059D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
+			GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -36,4 +36,5 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
+
 EndGlobal
