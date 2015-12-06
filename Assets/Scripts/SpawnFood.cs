@@ -12,19 +12,17 @@ public class SpawnFood : MonoBehaviour
     public Transform BorderLeft;
     public Transform BorderRight;
     // Use this for initialization
-    public void Start()
+    void Start()
     {
-		//Spawn ();
         // Spawn food every 4 seconds, starting in 3
         InvokeRepeating("Spawn", 3, 4);
     }
 
-	//void OnDestroy() {
-	//	Spawn ();
-	//}
     // Spawn one piece of food
-    public void Spawn()
+    void Spawn()
     {
+        if(FoodPrefab)
+        Destroy(FoodPrefab, 0.2f);
         // x position between left & right border
         int x = (int)Random.Range(BorderLeft.position.x, BorderRight.position.x);
 
@@ -33,7 +31,5 @@ public class SpawnFood : MonoBehaviour
 
         // Instantiate the food at (x, y)
         Instantiate(FoodPrefab, new Vector2(x, y), Quaternion.identity); // default rotation
-
     }
-	
 }
