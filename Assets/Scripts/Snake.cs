@@ -98,6 +98,9 @@ public class Snake : MonoBehaviour
             // ToDo 'You lose' screen
             dir = Vector2.zero;
             Application.LoadLevel("death");
+            //dir = Vector2.zero;
+            //Application.LoadLevel("death");
+            CancelInvoke();
 
         }
     }
