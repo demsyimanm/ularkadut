@@ -96,8 +96,6 @@ public class Snake : MonoBehaviour
         else if (coll.name.StartsWith("BorderTop") || coll.name.StartsWith("BorderLeft") || coll.name.StartsWith("BorderRight") || coll.name.StartsWith("BorderBottom"))
         {
             // ToDo 'You lose' screen
-            dir = Vector2.zero;
-            Application.LoadLevel("death");
             //dir = Vector2.zero;
             //Application.LoadLevel("death");
             CancelInvoke();

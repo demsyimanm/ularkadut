@@ -21,15 +21,32 @@ public class SpawnFood : MonoBehaviour
     // Spawn one piece of food
     void Spawn()
     {
-        if(FoodPrefab)
-        Destroy(FoodPrefab, 0.2f);
-        // x position between left & right border
-        int x = (int)Random.Range(BorderLeft.position.x, BorderRight.position.x);
+        try {
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Clone");
+            for (var i = 0; i < gameObjects.Length; i++)
+                Destroy(gameObjects[i]);
+            int x = (int)Random.Range(BorderLeft.position.x, BorderRight.position.x);
 
-        // y position between top & bottom border
-        int y = (int)Random.Range(BorderBottom.position.y, BorderTop.position.y);
+            // y position between top & bottom border
+            int y = (int)Random.Range(BorderBottom.position.y, BorderTop.position.y);
 
-        // Instantiate the food at (x, y)
-        Instantiate(FoodPrefab, new Vector2(x, y), Quaternion.identity); // default rotation
+            // Instantiate the food at (x, y)
+            Instantiate(FoodPrefab, new Vector2(x, y), Quaternion.identity); // default rotation
+        }
+        catch
+        {
+            // x position between left & right border
+            int x = (int)Random.Range(BorderLeft.position.x, BorderRight.position.x);
+
+            // y position between top & bottom border
+            int y = (int)Random.Range(BorderBottom.position.y, BorderTop.position.y);
+
+            // Instantiate the food at (x, y)
+            Instantiate(FoodPrefab, new Vector2(x, y), Quaternion.identity); // default rotation
+        }
+       
+
+
+
     }
 }
