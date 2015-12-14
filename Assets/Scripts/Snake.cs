@@ -18,13 +18,15 @@ public class Snake : MonoBehaviour
     void Start()
     {
         // Move the Snake every 300ms
-        InvokeRepeating("Move", 0.1f, 0.1f);
+        InvokeRepeating("Move", 0.08f, 0.08f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+       
+
+            if (Input.GetKey(KeyCode.RightArrow))
         {
 			if ( dir != -Vector2.right){
 				dir = Vector2.right;	
@@ -81,7 +83,16 @@ public class Snake : MonoBehaviour
             tail.RemoveAt(tail.Count - 1);
         }
     }
-    void OnTriggerEnter2D(Collider2D coll)
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        // Food?
+        //if (coll.gameObject.name.StartsWith("Tail"))
+        CancelInvoke();
+        Application.LoadLevel("final_score");
+    }
+
+        void OnTriggerEnter2D(Collider2D coll)
     {
         // Food?
         if (coll.name.StartsWith("FoodPrefab"))
@@ -99,8 +110,19 @@ public class Snake : MonoBehaviour
             //dir = Vector2.zero;
             //Application.LoadLevel("death");
             CancelInvoke();
+            Application.LoadLevel("final_score");
+            Debug.Log("cek1");
 
         }
-    }
-    
+        
+        
+        }
+    /*
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.name.StartsWith("Tail"))
+         {
+            Debug.Log("cek2");
+        }
+    }*/
 }
